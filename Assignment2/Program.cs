@@ -1,23 +1,28 @@
 ﻿using Assignment2;
 
-Store store = new Store();
-store.Data = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+ProcessNumbers();
 
-int evenNumbers = 0;
-int oddNumbers = 0;
-
-foreach (var item in store.Data)
+static void ProcessNumbers()
 {
-    if (item % 2 == 1)
+    Store store = new Store();
+    store.Data = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+    int evenNumbers = 0;
+    int oddNumbers = 0;
+
+    foreach (var item in store.Data)
     {
-        Console.WriteLine($"{item} is an odd number");
-        oddNumbers = oddNumbers + item;
+        if (item % 2 == 1)
+        {
+            Console.WriteLine($"{item} is an odd number");
+            oddNumbers = oddNumbers + item;
+        }
+        else
+        {
+            Console.WriteLine($"{item} is an even number");
+            evenNumbers = evenNumbers + item;
+        }
     }
-    else
-    {
-        Console.WriteLine($"{item} is an even number");
-        evenNumbers = evenNumbers + item;
-    }
+    Console.WriteLine($"Total even numbers: {evenNumbers}");
+    Console.WriteLine($"Total odd numbers: {oddNumbers}");
 }
-Console.WriteLine($"Total even numbers: {evenNumbers}");
-Console.WriteLine($"Total odd numbers: {oddNumbers}");
